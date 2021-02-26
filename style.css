@@ -1,0 +1,151 @@
+/* general rules st */
+
+* {
+    background-color: #f1f2f6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* general rules ed */
+
+
+/* for logo svg st */
+
+.mainContainer header .svgContainer svg {
+    position: absolute;
+    right: 0px;
+    background-color: transparent;
+    margin: 10px;
+    margin-right: 20px;
+}
+
+.mainContainer header .svgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    margin-top: -70px;
+    width: 512px;
+    height: 512px;
+    background-color: #45af0d;
+    border-radius: 100%;
+}
+
+
+/* logo svg ed */
+
+
+/* header st */
+
+.mainContainer header {
+    background-color: #45af0d;
+    width: 100%;
+    height: 256px;
+}
+
+
+/* navBar st */
+
+.mainContainer .navContainer {
+    margin-top: 50px;
+    background-color: transparent;
+    display: inline-flex;
+}
+
+.mainContainer header ul {
+    text-align: center;
+    background-color: transparent;
+    min-width: 696px;
+    list-style: none;
+    padding-top: 20px;
+}
+
+.mainContainer header ul li {
+    background-color: transparent;
+    display: inline-flex;
+}
+
+.mainContainer header ul li a {
+    margin: 10px;
+    margin-left: 90px;
+    color: #f1f2f6;
+    text-decoration: none;
+}
+
+.mainContainer header ul li a i {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.mainContainer header ul li span {
+    font-size: 100%;
+    background-color: transparent;
+    display: block;
+}
+
+
+/* navbar ed */
+
+
+/* header ed */
+
+
+/* main st */
+
+.mainContainer main {
+    margin: 40px;
+    font-size: 100%;
+}
+
+.mainContainer main .contentWrap {
+    display: inline-flex;
+    padding: 40px;
+}
+
+
+/* text wrapping st */
+
+.mainContainer main .contentWrap .textContainer {
+    color: #2F3542;
+    width: 50%;
+}
+
+.mainContainer main .contentWrap .textContainer h1 {
+    font-size: 3.25rem;
+    font-weight: bolder;
+}
+
+.mainContainer main .contentWrap .textContainer p {
+    margin-top: 30px;
+    text-align: left;
+    font-size: 1.5rem;
+    line-height: 1.5em;
+}
+
+
+/* text wrapping ed */
+
+
+/* solar svg st */
+
+.mainContainer main .contentWrap .svgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+
+/* soloar svg ed */
+
+
+/* main ed */
