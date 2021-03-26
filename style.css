@@ -7,6 +7,10 @@
     padding: 0;
 }
 
+body {
+    height: 100vh;
+}
+
 
 /* general rules ed */
 
@@ -99,12 +103,12 @@
 /* main st */
 
 .mainContainer main {
-    margin: 40px;
+    margin: 0 40px;
     font-size: 100%;
 }
 
 .mainContainer main .contentWrap {
-    display: inline-flex;
+    display: flex;
     padding: 40px;
 }
 
@@ -125,7 +129,7 @@
     margin-top: 30px;
     text-align: left;
     font-size: 1.5rem;
-    line-height: 1.5em;
+    line-height: 1.499em;
 }
 
 
@@ -135,9 +139,6 @@
 /* solar svg st */
 
 .mainContainer main .contentWrap .svgContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: transparent;
     margin-right: 0;
     margin-top: 0;
