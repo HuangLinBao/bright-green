@@ -18,8 +18,6 @@ body {
 /* for logo svg st */
 
 .mainContainer header .svgContainer svg {
-    position: absolute;
-    right: 0px;
     background-color: transparent;
     margin: 10px;
     margin-right: 20px;
@@ -29,11 +27,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    right: 0;
-    margin-top: -70px;
-    width: 512px;
-    height: 512px;
+    width: 450px;
+    height: 450px;
     background-color: #45af0d;
     border-radius: 100%;
 }
@@ -45,6 +40,7 @@ body {
 /* header st */
 
 .mainContainer header {
+    position: relative;
     background-color: #45af0d;
     width: 100%;
     height: 256px;
@@ -54,9 +50,12 @@ body {
 /* navBar st */
 
 .mainContainer .navContainer {
-    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
     background-color: transparent;
-    display: inline-flex;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: bolder;
 }
 
 .mainContainer header ul {
@@ -77,6 +76,12 @@ body {
     margin-left: 90px;
     color: #f1f2f6;
     text-decoration: none;
+    border-bottom: 4px solid transparent;
+    transition: 0.5s ease;
+}
+
+.mainContainer header ul li a:hover {
+    border-bottom: 4px solid #f1f2f6;
 }
 
 .mainContainer header ul li a i {
@@ -140,8 +145,10 @@ body {
 
 .mainContainer main .contentWrap .svgContainer {
     background-color: transparent;
-    margin-right: 0;
-    margin-top: 0;
+}
+
+.mainContainer main .contentWrap .svgContainer svg {
+    background-color: transparent;
 }
 
 
