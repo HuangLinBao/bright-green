@@ -72,16 +72,34 @@ body {
 }
 
 .mainContainer header ul li a {
+    --border-color: #f1f1f1;
+    --border-width: 5px;
+    --bottom-distance: 0px;
     margin: 10px;
     margin-left: 90px;
+    background-image: linear-gradient(var(--border-color), var(--border-color));
+    background-size: 0% var(--border-width);
+    background-repeat: no-repeat;
     color: #f1f2f6;
     text-decoration: none;
-    border-bottom: 4px solid transparent;
-    transition: 0.5s ease;
+    transition: background-size 200ms;
+    background-position: 50% calc(100% - var(--bottom-distance));
+}
+
+.mainContainer header ul li a.rightSide {
+    background-position: 100% calc(100% - var(--bottom-distance));
+}
+
+.mainContainer header ul li a.middle {
+    background-position: 50% calc(100% - var(--bottom-distance));
+}
+
+.mainContainer header ul li a.leftSide {
+    background-position: 0 calc(100% - var(--bottom-distance))
 }
 
 .mainContainer header ul li a:hover {
-    border-bottom: 4px solid #f1f2f6;
+    background-size: 100% var(--border-width);
 }
 
 .mainContainer header ul li a i {
