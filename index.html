@@ -14,20 +14,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="icon" href="topIcon.svg" type="image/x-icon" sizes="128x128">
+    <script src="script.js"></script>
 </head>
 
 <body>
     <div class="mainContainer">
         <header>
-            <div class="navContainer">
+            <nav class="navContainer">
 
-                <ul>
-                    <li><a class="leftSide home" href="#"><i class="fas fa-home"></i><br><span>Home</span></a></li>
-                    <li><a class="leftSide about" href="#"><i class="fas fa-id-card"></i><br><span>About Us</span></a></li>
-                    <li><a class="middle service" href="#"><i class="fas fa-bolt"></i><br><span>Our Services</span></a></li>
-                    <li><a class="middle work" href="#"><i class="fas fa-suitcase"></i><br><span>Our work</span></a></li>
-                    <li><a class="rightSide products" href="#"><i class="fas fa-solar-panel"></i><br><span>Our products</span></a></li>
-                    <li><a class="rightSide contact" href="#"><i class="fas fa-headset"></i><br><span>Contact Us</span></a></li>
+                <ul class="navbar">
+                    <li class="leftSide navItem active"><a class=" home scroll " href="#Home"><i class="fas fa-home"></i><br><span>Home</span></a></li>
+                    <li class="leftSide navItem"><a class=" about scroll" href="#About"><i class="fas fa-id-card"></i><br><span>About Us</span></a></li>
+                    <li class="middle navItem"><a class=" service scroll" href="#Services"><i class="fas fa-bolt"></i><br><span>Our Services</span></a></li>
+                    <li class="middle navItem"><a class=" work scroll" href="#Work"><i class="fas fa-suitcase"></i><br><span>Our work</span></a></li>
+                    <li class="rightSide navItem"><a class=" products scroll" href="#Products"><i class="fas fa-solar-panel"></i><br><span>Our products</span></a></li>
+                    <li class="rightSide navItem"><a class=" contact scroll" href="#Contact"><i class="fas fa-headset"></i><br><span>Contact Us</span></a></li>
 
                 </ul>
                 <div class="svgContainer">
@@ -205,22 +206,23 @@
                         </defs>
                         </svg>
                 </div>
-            </div>
+            </nav>
         </header>
 
         <main>
             <div class="contentWrap">
-                <div class="textContainer">
-                    <h1>Lead the scene and keep it green.</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Quasi necessitatibus consequatur repellat officia laboriosam hic.<br>At magni non tempora impedit voluptatibus provident molestias!<br>Eius sequi laborum officiis inventore
-                        eum.
-                        <br>Quod, non dignissimos, aperiam rem laborum illum ex ipsam consectetur debitis autem, neque labore deserunt eius sapiente.<br>Nostrum dignissimos eum vel pariatur nemo consectetur ipsam nam cumque sint perspiciatis quod, molestias,
-                        error eos libero, inventore deleniti repellat eaque?<br>Consequatur molestiae quam facilis velit, voluptate exercitationem dolorum?<br>Sit laboriosam at soluta minima!<br>Obcaecati cum nulla hic dolore iste voluptate quam dignissimos
-                        itaque.
-                    </p>
-                </div>
-                <div class="svgContainer">
-                    <svg width="1024" height="1024" viewBox="0 700 3452 1992" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <section class="homePage" id="Home">
+                    <div class="textContainer">
+                        <h1>Lead the scene and keep it green.</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>Quasi necessitatibus consequatur repellat officia laboriosam hic.<br>At magni non tempora impedit voluptatibus provident molestias!<br>Eius sequi laborum officiis inventore
+                            eum.
+                            <br>Quod, non dignissimos, aperiam rem laborum illum ex ipsam consectetur debitis autem, neque labore deserunt eius sapiente.<br>Nostrum dignissimos eum vel pariatur nemo consectetur ipsam nam cumque sint perspiciatis quod,
+                            molestias, error eos libero, inventore deleniti repellat eaque?<br>Consequatur molestiae quam facilis velit, voluptate exercitationem dolorum?<br>Sit laboriosam at soluta minima!<br>Obcaecati cum nulla hic dolore iste voluptate
+                            quam dignissimos itaque.
+                        </p>
+                    </div>
+                    <div class="svgContainer">
+                        <svg width="1024" height="1024" viewBox="0 0 3452 1992" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3195.6 1883.78C3159.52 1875.43 3107 1937 3107 1937H3257C3257 1937 3221.84 1889.85 3195.6 1883.78Z" fill="#2F3542" stroke="#2F3542"/>
                         <path d="M3304.87 1752.92C3291.32 1797.77 3261.35 1834.11 3234.74 1859.25C3221.43 1871.81 3208.97 1881.57 3199.84 1888.19C3195.28 1891.5 3191.55 1894.02 3188.96 1895.72C3187.66 1896.56 3186.65 1897.2 3185.97 1897.63C3185.73 1897.78 3185.53 1897.9 3185.37 1898C3185.29 1897.85 3185.2 1897.66 3185.08 1897.44C3184.73 1896.76 3184.22 1895.75 3183.58 1894.44C3182.3 1891.8 3180.49 1887.94 3178.41 1883.02C3174.25 1873.19 3168.99 1859.13 3164.57 1842.27C3155.73 1808.55 3150.29 1763.64 3163.83 1718.79C3177.37 1673.93 3207.34 1637.6 3233.96 1612.46C3247.26 1599.89 3259.72 1590.13 3268.85 1583.51C3273.42 1580.21 3277.15 1577.68 3279.74 1575.99C3281.03 1575.14 3282.04 1574.5 3282.73 1574.07C3282.97 1573.92 3283.16 1573.8 3283.32 1573.7C3283.4 1573.85 3283.5 1574.04 3283.61 1574.26C3283.96 1574.94 3284.48 1575.95 3285.12 1577.27C3286.4 1579.9 3288.2 1583.76 3290.28 1588.68C3294.44 1598.52 3299.71 1612.57 3304.13 1629.43C3312.97 1663.15 3318.41 1708.07 3304.87 1752.92Z" fill="#45AF0D" stroke="#2F3542"/>
                         <path d="M3080.34 1573.7C3080.5 1573.8 3080.69 1573.92 3080.93 1574.07C3081.62 1574.5 3082.63 1575.14 3083.92 1575.99C3086.51 1577.68 3090.24 1580.21 3094.81 1583.51C3103.94 1590.13 3116.4 1599.89 3129.7 1612.46C3156.32 1637.6 3186.29 1673.93 3199.83 1718.79C3213.37 1763.64 3207.93 1808.55 3199.09 1842.27C3194.68 1859.13 3189.41 1873.19 3185.25 1883.02C3183.17 1887.94 3181.37 1891.8 3180.08 1894.44C3179.44 1895.75 3178.93 1896.76 3178.58 1897.44C3178.46 1897.66 3178.37 1897.85 3178.29 1898C3178.27 1897.99 3178.26 1897.98 3178.25 1897.98C3178.1 1897.88 3177.91 1897.77 3177.69 1897.63C3177.01 1897.2 3176 1896.56 3174.7 1895.72C3172.11 1894.02 3168.38 1891.5 3163.82 1888.19C3154.69 1881.57 3142.23 1871.81 3128.92 1859.25C3102.31 1834.11 3072.34 1797.77 3058.8 1752.92C3045.25 1708.07 3050.69 1663.15 3059.53 1629.43C3063.95 1612.57 3069.22 1598.52 3073.38 1588.68C3075.46 1583.76 3077.26 1579.9 3078.54 1577.27C3079.19 1575.95 3079.7 1574.94 3080.05 1574.26C3080.16 1574.04 3080.26 1573.85 3080.34 1573.7Z" fill="#45AF0D" stroke="#2F3542"/>
@@ -469,7 +471,37 @@
                         <path d="M626.578 192.759C610.013 228.288 532.579 245.008 521.986 281.254C518.563 292.963 544.322 305.715 547.319 293.854C560.575 241.391 641.821 240.08 659.674 192.759C677.289 146.068 761.7 58.1158 761.7 58.1158C761.7 58.1158 652.017 138.195 626.578 192.759Z" fill="#F9CA24"/>
                         </svg>
 
-                </div>
+                    </div>
+                </section>
+                <section class="aboutPage" id="About" style="width: 100%; height: 100vh;margin: 0;">
+                    <div class="textContainer">
+                        <h1>About Us</h1>
+                        <div class="page">
+                            <p>Bright Green Lighting offers more than 2 years’ experience in the Middle East.<br> The founders of Bright Green lighting along with the Engineering Team have a global network in the lighting field. From suppliers and manufactures
+                                to loyal recurring customers.</p>
+                        </div>
+
+                        <div class="page">
+                            <p>Passion and preparation are the key factors to the growth of <a class="transit" href="https://istanboulgroup.com/">Istanbul Lighting</a>.<br> The goals and demands in the variety of projects are not only challenging but also
+                                rewarding when achieved.</p>
+                        </div>
+                        <div class="page">
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+                <section class="servicePage" id="Services" style="background-color: red; width: 100%; height: 100vh;margin: 0;">
+
+                </section>
+                <section class="workPage" id="Work" style="background-color: aqua; width: 100%; height: 100vh;margin: 0;">
+
+                </section>
+                <section class="productsPage" id="Products" style="background-color: orangered; width: 100%; height: 100vh;margin: 0;">
+
+                </section>
+                <section class="contactPage" id="Contact" style="background-color: darkmagenta; width: 100%; height: 100vh;margin: 0;">
+
+                </section>
             </div>
         </main>
     </div>

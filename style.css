@@ -5,9 +5,11 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    transition: all .1s ease;
 }
 
 body {
+    position: relative;
     height: 100vh;
 }
 
@@ -40,16 +42,18 @@ body {
 /* header st */
 
 .mainContainer header {
-    position: relative;
+    position: fixed;
+    top: 0;
     background-color: #45af0d;
     width: 100%;
     height: 256px;
+    transition: all 0.5s ease-in-out;
 }
 
 
 /* navBar st */
 
-.mainContainer .navContainer {
+.mainContainer header .navContainer {
     display: flex;
     justify-content: space-between;
     background-color: transparent;
@@ -58,22 +62,28 @@ body {
     font-weight: bolder;
 }
 
-.mainContainer header ul {
+.mainContainer header .navContainer ul.navbar {
+    padding: 0;
     text-align: center;
     background-color: transparent;
     min-width: 696px;
+    max-height: 256px;
     list-style: none;
-    padding-top: 20px;
 }
 
-.mainContainer header ul li {
+.mainContainer header .navContainer ul.navbar li.navItem {
     background-color: transparent;
     display: inline-flex;
 }
 
-.mainContainer header ul li a {
+.mainContainer header .navContainer ul.navbar li.navItem a {
+    text-decoration: none;
+    color: #f1f2f6;
+}
+
+.mainContainer header .navContainer ul.navbar li.navItem {
     --border-color: #f1f1f1;
-    --border-width: 5px;
+    --border-width: 4px;
     --bottom-distance: 0px;
     margin: 10px;
     margin-left: 90px;
@@ -86,23 +96,28 @@ body {
     background-position: 50% calc(100% - var(--bottom-distance));
 }
 
-.mainContainer header ul li a.rightSide {
+.mainContainer header .navContainer ul.navbar li.rightSide {
     background-position: 100% calc(100% - var(--bottom-distance));
 }
 
-.mainContainer header ul li a.middle {
+.mainContainer header .navContainer ul.navbar li.middle {
     background-position: 50% calc(100% - var(--bottom-distance));
 }
 
-.mainContainer header ul li a.leftSide {
+.mainContainer header .navContainer ul.navbar li.leftSide {
     background-position: 0 calc(100% - var(--bottom-distance))
 }
 
-.mainContainer header ul li a:hover {
+.mainContainer header nav.navContainer ul.navbar li:hover {
     background-size: 100% var(--border-width);
 }
 
-.mainContainer header ul li a i {
+.mainContainer header .navContainer ul.navbar li.active {
+    background-size: 100% var(--border-width);
+}
+
+.mainContainer header nav.navContainer ul.navbar li.navItem a i {
+    color: #f1f2f6;
     font-size: 60px;
     display: flex;
     justify-content: center;
@@ -110,7 +125,7 @@ body {
     background-color: transparent;
 }
 
-.mainContainer header ul li span {
+.mainContainer header .navContainer ul.navbar li.navItem span {
     font-size: 100%;
     background-color: transparent;
     display: block;
@@ -120,25 +135,91 @@ body {
 /* navbar ed */
 
 
+/* header on scroll st */
+
+.mainContainer header.smallHeader .svgContainer svg {
+    width: 256px;
+    height: 256px;
+    background-color: transparent;
+    margin: 10px;
+    margin-right: 20px;
+}
+
+.mainContainer header.smallHeader .svgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 190px;
+    height: 190px;
+    background-color: #45af0d;
+    border-radius: 100%;
+}
+
+.mainContainer header.smallHeader {
+    position: fixed;
+    top: 0;
+    background-color: #45af0d;
+    width: 100%;
+    height: 128px;
+    transition: 0.5s;
+}
+
+.mainContainer header.smallHeader .navContainer {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.mainContainer header.smallHeader nav.navContainer ul.navbar li.navItem a i {
+    color: #f1f2f6;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.mainContainer header.smallHeader .navContainer ul.navbar {
+    padding: 0;
+    text-align: center;
+    background-color: transparent;
+    min-width: 696px;
+    max-height: 128px;
+    list-style: none;
+}
+
+
+/* header on scroll ed */
+
+
 /* header ed */
 
 
 /* main st */
 
 .mainContainer main {
-    margin: 0 40px;
+    margin: 40px 0;
     font-size: 100%;
 }
 
-.mainContainer main .contentWrap {
+
+/* Homepage St */
+
+.mainContainer main .contentWrap .homePage {
     display: flex;
-    padding: 40px;
+    padding: 40px 0 40px 0;
+    height: 100vh;
 }
 
 
 /* text wrapping st */
 
 .mainContainer main .contentWrap .textContainer {
+    margin: 0 40px;
+    padding-top: 250px;
     color: #2F3542;
     width: 50%;
 }
@@ -148,8 +229,7 @@ body {
     font-weight: bolder;
 }
 
-.mainContainer main .contentWrap .textContainer p {
-    margin-top: 30px;
+.mainContainer main .contentWrap .homePage .textContainer p {
     text-align: left;
     font-size: 1.5rem;
     line-height: 1.499em;
@@ -161,16 +241,47 @@ body {
 
 /* solar svg st */
 
-.mainContainer main .contentWrap .svgContainer {
+.mainContainer main .contentWrap .homePage .svgContainer {
     background-color: transparent;
 }
 
-.mainContainer main .contentWrap .svgContainer svg {
+.mainContainer main .contentWrap .homePage .svgContainer svg {
     background-color: transparent;
 }
 
 
 /* soloar svg ed */
+
+
+/* Homepage ed */
+
+
+/* About st */
+
+.mainContainer main .contentWrap .aboutPage .textContainer p a {
+    --border-color: #45af0d;
+    --border-width: 2px;
+    --bottom-distance: 0px;
+    background-image: linear-gradient(var(--border-color), var(--border-color));
+    background-size: 0% var(--border-width);
+    background-repeat: no-repeat;
+    transition: background-size 200ms;
+    background-position: 50% calc(100% - var(--bottom-distance));
+    color: #45af0d;
+    text-decoration: none;
+    color: #45af0d;
+}
+
+.mainContainer main .contentWrap .aboutPage .textContainer p a.transit {
+    background-position: 50% calc(100% - var(--bottom-distance));
+}
+
+.mainContainer main .contentWrap .aboutPage .textContainer p a:hover {
+    background-size: 100% var(--border-width);
+}
+
+
+/* About ed */
 
 
 /* main ed */
