@@ -173,7 +173,63 @@ $(document).ready(function() {
 
 
     barba.init({
+        sync: true,
 
+        transitions: [{
+
+            async leave(data) {
+                const done = this.async();
+                // create your stunning leave animation here
+                setTimeout(function() {
+                    transitAnimation();
+                }, 2000);
+                await delay(4000); // 3000 = 3 sec
+                done();
+            },
+            async enter(data) {
+                // create your amazing enter animation here
+            }
+        }]
     });
 
 });
+
+function delay(n) {
+
+    n = n || 4000;
+    return new Promise((done) => {
+        setTimeout(() => {
+            done();
+        }, n);
+    });
+}
+
+function transitAnimation() {
+    gsap.to(".loader.main", {
+        duration: 1,
+        scaleX: 1,
+        transformOrigin: "left",
+        ease: "power1.inOut"
+    });
+    gsap.to(".loader.main", {
+        duration: 1,
+        scaleX: 0,
+        transformOrigin: "right",
+        ease: "power1.inOut",
+        delay: 2
+    });
+
+    gsap.to(".loader.sub", {
+        duration: 1.4,
+        scaleX: 1,
+        transformOrigin: "left",
+        ease: "power1.inOut"
+    });
+    gsap.to(".loader.sub", {
+        duration: 1.4,
+        scaleX: 0,
+        transformOrigin: "right",
+        ease: "power1.inOut",
+        delay: 1.6
+    });
+}
