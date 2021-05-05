@@ -219,17 +219,5 @@ function transitAnimation() {
         delay: 2
     });
 
-    gsap.to(".loader.sub", {
-        duration: 1.4,
-        scaleX: 1,
-        transformOrigin: "left",
-        ease: "power1.inOut"
-    });
-    gsap.to(".loader.sub", {
-        duration: 1.4,
-        scaleX: 0,
-        transformOrigin: "right",
-        ease: "power1.inOut",
-        delay: 1.6
-    });
+
 }

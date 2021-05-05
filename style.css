@@ -802,16 +802,16 @@ body {
 .mainContainer section.main .contentWrap .productsPage .wrap .cont .loader {
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     background-color: #2ed573;
-    z-index: 99;
+    z-index: 999;
     transform: scaleX(0);
 }
 
 .mainContainer section.main .contentWrap .productsPage .wrap .cont .loader.sub {
     background-color: #2f3542;
+    /* transform: scaleX(0); */
 }
 
 .mainContainer section.main .contentWrap .productsPage .wrap .btnCard {
