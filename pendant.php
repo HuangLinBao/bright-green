@@ -821,101 +821,101 @@
                         <div class="cont">
                             <div class="loader main"></div>
                             <div class="loader sub"></div>
-                            <main data-barba="container" data-barba-namespace="strip" class="prodStrip">
+                            <main data-barba="container" data-barba-namespace="pendant" class="prodPendant">
                                 <h1>Our Products</h1>
 
-                            </main>
-                        </div>
-                    </div>
-
-
-                </section>
-                <!-- contact -->
-                <section class="contactPage" id="Contact" style="width: 100%; height: 100vh;margin: 0;">
-                    <div class="welcomePage">
-                        <h1>Get a Quote</h1>
-                        <h2>Our team is On-Hand to help everyday</h2>
-                    </div>
-                    <div class="inputWrapper">
-                        <div class="quoteSubmit">
-                            <div class="wrap">
-                                <div class="introMsg">
-                                    <h2>Talk to Us - We're here to Help</h2>
-
-                                </div>
-                                <div class="inp">
-                                    <div class="Name">
-                                        <label class="custom-input nameField">
-                                            <input type="text" required class="yourName" id="name">
-                                            <span class="placeholder">Name</span>
-                                            <span class="border"></span>
-                                        </label>
-                                    </div>
-                                    <div class="emailAndNo">
-                                        <label class="custom-input emialField">
-                                            <input type="text" required class="email" id="email">
-                                            <span class="placeholder">Email</span>
-                                            <span class="border"></span>
-                                        </label>
-                                        <label class="custom-input numField">
-                                            <input type="text" required class="number" id="number">
-                                            <span class="placeholder">Phone Number</span>
-                                            <span class="border"></span>
-                                        </label>
-                                    </div>
-                                    <label class="custom-input subjectField">
-                                        <input type="text" required class="subject" id="Subject">
-                                        <span class="placeholder">Subject</span>
-                                        <span class="border"></span>
-                                    </label>
-                                    <label class="custom-input textArea">
-                                        <textarea style="resize: none;" required name="message" id="message" cols="30" rows="10"></textarea>
-                                        <span class="placeholder">How can we Help</span>
-                                        <span class="border"></span>
-                                    </label>
-                                    <button type="submit" class="grow_ellipse quoteBtn">Get Quote</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mapWr">
-                            <div class="mapCard Ad">
-                                <div class="map">
-                                    <p>
-                                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7263.093205895257!2d54.383735!3d24.466511!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe81b229d12cbfbcb!2sBright%20Green%20Future%20Lighting!5e0!3m2!1sen!2sus!4v1619939581907!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                                    </p>
-                                </div>
-                                <div class="descreption">
-                                    <h2>Abu Dhabi Branch</h2>
-                                    <br>
-                                    <p><span><i class="fas fa-directions"></i></span> Office No E 25, Al Nahyan, P.O. Box: 127092,<br> Abu Dhabi, United Arab Emirates
-                                    </p>
-                                    <p><span><i class="fas fa-phone-volume"></i></span>+97125593884
-                                    </p>
-                                    <p><span><i class="fas fa-mobile"></i></span>+971543086692</p>
-                                    <p><span><i class="fas fa-paper-plane"></i></span>frontdesk@brightgreenlighting.com</p>
-                                    <p><span><i class="fas fa-briefcase"></i></span>09:00AM – 06:00PM<br>Sunday – Thursday</p>
-                                </div>
-                            </div>
-                            <div class="mapCard Dxb">
-                                <div class="map">
-                                    <p><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1804.1150630581917!2d55.332378!3d25.262843!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b850ee67b7b771b!2sBRIGHT%20GREEN%20FUTURE%20LIGHTING!5e0!3m2!1sen!2sus!4v1619939755704!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
-                                </div>
-                                <div class="descreption">
-                                    <h2>Dubai Branch</h2>
-                                    <br>
-                                    <p><span><i class="fas fa-directions"></i></span> Off. 206-05, Key Business Group for Investment Bldg.<br> Al Khabisi, Deira Dubai, U.A.E. PO Box: 19350
-                                    </p>
-                                    <p><span><i class="fas fa-phone-volume"></i></span>+97143396996</p>
-                                    <p><span><i class="fas fa-mobile"></i></span>+97152695445/+971523183338</p>
-                                    <p><span><i class="fas fa-paper-plane"></i></span>frontdesk@brightgreenlighting.com</p>
-                                    <p><span><i class="fas fa-briefcase"></i></span>09:00AM – 06:00PM<br>Sunday – Thursday</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </section>
             </div>
-        </section>
+    </div>
+
+
+    </section>
+    <!-- contact -->
+    <section class="contactPage" id="Contact" style="width: 100%; height: 100vh;margin: 0;">
+        <div class="welcomePage">
+            <h1>Get a Quote</h1>
+            <h2>Our team is On-Hand to help everyday</h2>
+        </div>
+        <div class="inputWrapper">
+            <div class="quoteSubmit">
+                <div class="wrap">
+                    <div class="introMsg">
+                        <h2>Talk to Us - We're here to Help</h2>
+
+                    </div>
+                    <div class="inp">
+                        <div class="Name">
+                            <label class="custom-input nameField">
+                                <input type="text" required class="yourName" id="name">
+                                <span class="placeholder">Name</span>
+                                <span class="border"></span>
+                            </label>
+                        </div>
+                        <div class="emailAndNo">
+                            <label class="custom-input emialField">
+                                <input type="text" required class="email" id="email">
+                                <span class="placeholder">Email</span>
+                                <span class="border"></span>
+                            </label>
+                            <label class="custom-input numField">
+                                <input type="text" required class="number" id="number">
+                                <span class="placeholder">Phone Number</span>
+                                <span class="border"></span>
+                            </label>
+                        </div>
+                        <label class="custom-input subjectField">
+                            <input type="text" required class="subject" id="Subject">
+                            <span class="placeholder">Subject</span>
+                            <span class="border"></span>
+                        </label>
+                        <label class="custom-input textArea">
+                            <textarea style="resize: none;" required name="message" id="message" cols="30" rows="10"></textarea>
+                            <span class="placeholder">How can we Help</span>
+                            <span class="border"></span>
+                        </label>
+                        <button type="submit" class="grow_ellipse quoteBtn">Get Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="mapWr">
+                <div class="mapCard Ad">
+                    <div class="map">
+                        <p>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7263.093205895257!2d54.383735!3d24.466511!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe81b229d12cbfbcb!2sBright%20Green%20Future%20Lighting!5e0!3m2!1sen!2sus!4v1619939581907!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </p>
+                    </div>
+                    <div class="descreption">
+                        <h2>Abu Dhabi Branch</h2>
+                        <br>
+                        <p><span><i class="fas fa-directions"></i></span> Office No E 25, Al Nahyan, P.O. Box: 127092,<br> Abu Dhabi, United Arab Emirates
+                        </p>
+                        <p><span><i class="fas fa-phone-volume"></i></span>+97125593884
+                        </p>
+                        <p><span><i class="fas fa-mobile"></i></span>+971543086692</p>
+                        <p><span><i class="fas fa-paper-plane"></i></span>frontdesk@brightgreenlighting.com</p>
+                        <p><span><i class="fas fa-briefcase"></i></span>09:00AM – 06:00PM<br>Sunday – Thursday</p>
+                    </div>
+                </div>
+                <div class="mapCard Dxb">
+                    <div class="map">
+                        <p><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1804.1150630581917!2d55.332378!3d25.262843!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b850ee67b7b771b!2sBRIGHT%20GREEN%20FUTURE%20LIGHTING!5e0!3m2!1sen!2sus!4v1619939755704!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
+                    </div>
+                    <div class="descreption">
+                        <h2>Dubai Branch</h2>
+                        <br>
+                        <p><span><i class="fas fa-directions"></i></span> Off. 206-05, Key Business Group for Investment Bldg.<br> Al Khabisi, Deira Dubai, U.A.E. PO Box: 19350
+                        </p>
+                        <p><span><i class="fas fa-phone-volume"></i></span>+97143396996</p>
+                        <p><span><i class="fas fa-mobile"></i></span>+97152695445/+971523183338</p>
+                        <p><span><i class="fas fa-paper-plane"></i></span>frontdesk@brightgreenlighting.com</p>
+                        <p><span><i class="fas fa-briefcase"></i></span>09:00AM – 06:00PM<br>Sunday – Thursday</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    </main>
     </div>
 
 </body>

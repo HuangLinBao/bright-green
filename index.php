@@ -1,3 +1,8 @@
+<?php
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1549,10 +1554,11 @@
                     </div>
                 </section>
                 </div>
-                </main>
-            </div>
-
-            <script src="script.js"></script>
+            </section>
+        </div>
+    </div>
+            
 </body>
 
+<script src="script.js"></script>
 </html>
