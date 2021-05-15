@@ -1,0 +1,418 @@
+/* ==========================================================================
+   #SPACING
+   ========================================================================== */
+
+.modal .p-t-100 {
+    padding-top: 100px;
+}
+
+.modal .p-t-180 {
+    padding-top: 180px;
+}
+
+.modal .p-t-20 {
+    padding-top: 20px;
+}
+
+.modal .p-t-10 {
+    padding-top: 10px;
+}
+
+.modal .p-t-30 {
+    padding-top: 30px;
+}
+
+.modal .p-b-100 {
+    padding-bottom: 100px;
+}
+
+
+/* ==========================================================================
+   #WRAPPER
+   ========================================================================== */
+
+.modal .wrapper {
+    margin: 0 auto;
+}
+
+.modal .wrapper--w960 {
+    max-width: 960px;
+}
+
+.modal .wrapper--w780 {
+    max-width: 780px;
+}
+
+.modal .wrapper--w680 {
+    max-width: 680px;
+}
+
+
+/* ==========================================================================
+   #BUTTON
+   ========================================================================== */
+
+.modal .btn {
+    display: inline-block;
+    line-height: 40px;
+    padding: 0 33px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    color: #f1f2f6;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    font-size: 18px;
+    background: #45af0d;
+}
+
+.modal .btn--radius {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.modal .btn--pill {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+
+/* ==========================================================================
+   #DATE PICKER
+   ========================================================================== */
+
+td.active {
+    background-color: #45af0d;
+}
+
+input[type="date" i] {
+    padding: 14px;
+}
+
+.table-condensed td,
+.table-condensed th {
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+
+.daterangepicker td {
+    width: 40px;
+    height: 30px;
+}
+
+.daterangepicker {
+    border: none;
+    -webkit-box-shadow: 0px 8px 20px 0px rgba(47, 53, 66, 0.15);
+    -moz-box-shadow: 0px 8px 20px 0px rgba(47, 53, 66, 0.15);
+    box-shadow: 0px 8px 20px 0px rgba(47, 53, 66, 0.15);
+    display: none;
+    border: 1px solid #ced6e0;
+    margin-top: 5px;
+}
+
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+    background-color: #45af0d;
+    border-color: transparent;
+    color: #fff;
+}
+
+.table-condensed td.active {
+    background-color: #45af0d;
+}
+
+.daterangepicker::after,
+.daterangepicker::before {
+    display: none;
+}
+
+.daterangepicker thead tr th {
+    padding: 10px 0;
+}
+
+.daterangepicker .table-condensed th select {
+    position: sticky;
+    border: 1px solid #ced6e0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 5px;
+    outline: none;
+    z-index: 9999;
+}
+
+
+/* ==========================================================================
+   #FORM
+   ========================================================================== */
+
+.modal input {
+    outline: none;
+    margin: 0;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.modal .input-icon {
+    position: absolute;
+    font-size: 18px;
+    color: #747d8c;
+    right: 8px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 33px;
+    border-bottom: 1px solid rgba(47, 53, 66, 0.3);
+}
+
+.modal .input--style-3 {
+    padding: 5px 0;
+    font-size: 16px;
+    color: #2f3542;
+    background: transparent;
+}
+
+.modal .input--style-3::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #747d8c;
+}
+
+.modal .input--style-3:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #747d8c;
+    opacity: 1;
+}
+
+.modal .input--style-3::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #747d8c;
+    opacity: 1;
+}
+
+.modal .input--style-3:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #747d8c;
+}
+
+.modal .input--style-3:-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #747d8c;
+}
+
+
+/* ==========================================================================
+   #SELECT2
+   ========================================================================== */
+
+.modal .select--no-search .select2-search {
+    display: none !important;
+}
+
+.modal .select--no-search {
+    min-width: 100% !important;
+}
+
+.modal .rs-select2 .select2-container {
+    min-width: 100% !important;
+    outline: none;
+}
+
+.modal .rs-select2 .select2-container .select2-selection--single {
+    outline: none;
+    border: none;
+    height: 36px;
+    background: transparent;
+}
+
+.modal .rs-select2 .select2-container .select2-selection--single .select2-selection__rendered {
+    line-height: 36px;
+    padding-left: 0;
+    color: #2f3542;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.modal .rs-select2 .select2-container .select2-selection--single .select2-selection__arrow {
+    height: 34px;
+    right: 4px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.modal .rs-select2 .select2-container .select2-selection--single .select2-selection__arrow b {
+    display: none;
+}
+
+.modal .rs-select2 .select2-container .select2-selection--single .select2-selection__arrow:after {
+    font-family: "Material-Design-Iconic-Font";
+    content: '\f2f9';
+    font-size: 18px;
+    color: #747d8c;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.modal .rs-select2 .select2-container.select2-container--open .select2-selection--single .select2-selection__arrow::after {
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+.modal .select2-container--open .select2-dropdown--below {
+    border: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 8px 20px 0px rgba(47, 53, 66, 0.15);
+    -moz-box-shadow: 0px 8px 20px 0px rgba(47, 53, 66, 0.15);
+    box-shadow: 0px 8px 20px 0px rgba(47, 53, 66, 0.15);
+    border: 1px solid #ced6e0;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #45af0d;
+    color: #f1f2f6;
+}
+
+.select2-results__options {
+    background-color: #f1f2f6
+}
+
+
+/* ==========================================================================
+   #TITLE
+   ========================================================================== */
+
+.modal .title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    color: #2f3542;
+    font-weight: 400;
+    margin-bottom: 36px;
+}
+
+
+/* ==========================================================================
+   #CARD
+   ========================================================================== */
+
+.modal .card {
+    overflow: hidden;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #f1f2f6;
+}
+
+.modal .card-3 {
+    background: #f1f2f6;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 8px 20px 0px rgba(47, 53, 66, 0.15);
+    -moz-box-shadow: 0px 8px 20px 0px rgba(47, 53, 66, 0.15);
+    box-shadow: 0px 8px 20px 0px rgba(47, 53, 66, 0.15);
+    width: 100%;
+    display: table;
+}
+
+.modal .card-3 .card-heading {
+    background-color: #45af0d;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%232f3542' stroke-width='20.3' stroke-opacity='0.6' %3E%3Ccircle fill='%23255f07' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23276307' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23296808' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%232a6c08' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%232c7108' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%232e7609' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23307a09' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23327f09' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%2334840a' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%2336880a' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23388d0b' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%2339920b' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%233b970b' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%233d9b0c' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%233fa00c' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%2341a50c' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%2343aa0d' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%2345af0d' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E") top left/cover;
+    background-attachment: fixed;
+    background-size: cover;
+    display: table-cell;
+    width: 50%;
+}
+
+.modal .card-3 .card-body {
+    padding: 57px 65px;
+    padding-bottom: 65px;
+    display: table-cell;
+}
+
+@media (max-width: 767px) {
+    .modal .card-3 {
+        display: block;
+    }
+    .modal .card-3 .card-heading {
+        display: block;
+        width: 100%;
+        padding-top: 400px;
+        background-position: center center;
+    }
+    .modal .card-3 .card-body {
+        display: block;
+        width: 100%;
+        padding: 37px 30px;
+        padding-bottom: 45px;
+    }
+}
+
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #45af0d;
+    --secondary: #868e96;
+    --success: #28a745;
+    --info: #45af0d;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+}
