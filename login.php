@@ -1,12 +1,7 @@
 <?php require_once("./db.php"); ?>
 <?php require_once("./essential.php"); ?>
 <?php 
-    $sql = "SELECT * FROM accounts";
-    $stmt = $pdo->prepare($sql) ;
-    $stmt->execute();
-    while($post = $stmt->fetch(PDO::FETCH_ASSOC)){
-        echo $post['account_name']."<br>";
-    }
+    
 ?>
 
 <!DOCTYPE html>
