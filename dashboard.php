@@ -774,7 +774,7 @@ $stmt->execute();
         <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModal" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
-                    <form action="addPic.php" , method="POST">
+                    <form action="addPic.php" , method="POST" enctype="multipart/form-data">
 
                         <div class="modal-header">
                             <h5 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="modal-title" id="exampleModalLongTitle">Add A Card</h5>
@@ -787,7 +787,7 @@ $stmt->execute();
                                 <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
 
                                 <div class="image-upload-wrap">
-                                    <input name="img" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                                    <input name="img[]" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
                                     <div class="drag-text">
                                         <h3>Drag and drop a file or select add Image</h3>
                                     </div>

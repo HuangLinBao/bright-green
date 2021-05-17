@@ -712,11 +712,17 @@ $stmt->execute();
                         <div class="cont">
                             <div class="workDiv scrollable">
                                 <?php
-                                    while ($post = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                                        echo "<div data-toggle='tooltip' title='{$post['project_name']}' data-placement='auto' class='card projectCard'>";        
-                                        echo " <img src='{$post['project_img ']}' alt=''>";
-                                        echo "</div";
-                                    }
+                                while ($post = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                    echo
+                                    '<div data-toggle="tooltip" title="' . $post['project_name'] . '" data-placement="auto" class="card projectCard">
+
+                                        <img src="' . $post['project_img'] . '" /> 
+
+                                        </div>
+
+                                    
+                                    ';
+                                }
 
                                 ?>
 
@@ -818,38 +824,41 @@ $stmt->execute();
                                     <h2>Talk to Us - We're here to Help</h2>
 
                                 </div>
-                                <div class="inp">
-                                    <div class="Name">
-                                        <label class="custom-input nameField">
-                                            <input type="text" required class="yourName" id="name">
-                                            <span class="placeholder">Name</span>
+                                <form action="sendMsg.php" method="POST">
+
+                                    <div class="inp">
+                                        <div class="Name">
+                                            <label class="custom-input nameField">
+                                                <input type="text" required class="yourName" id="name" name="name">
+                                                <span class="placeholder">Name</span>
+                                                <span class="border"></span>
+                                            </label>
+                                        </div>
+                                        <div class="emailAndNo">
+                                            <label class="custom-input emialField">
+                                                <input type="email" required class="email" id="email" name="email">
+                                                <span class="placeholder">Email</span>
+                                                <span class="border"></span>
+                                            </label>
+                                            <label class="custom-input numField">
+                                                <input type="text" required class="number" id="number" name="number">
+                                                <span class="placeholder">Phone Number</span>
+                                                <span class="border"></span>
+                                            </label>
+                                        </div>
+                                        <label class="custom-input subjectField">
+                                            <input type="text" required class="subject" id="Subject" name="subject">
+                                            <span class="placeholder">Subject</span>
                                             <span class="border"></span>
                                         </label>
+                                        <label class="custom-input textArea">
+                                            <textarea name="msg" style="resize: none;" required name="message" id="message" cols="30" rows="10"></textarea>
+                                            <span class="placeholder">How can we Help</span>
+                                            <span class="border"></span>
+                                        </label>
+                                        <button name="submit" type="submit" class="grow_ellipse quoteBtn">Get Quote</button>
                                     </div>
-                                    <div class="emailAndNo">
-                                        <label class="custom-input emialField">
-                                            <input type="text" required class="email" id="email">
-                                            <span class="placeholder">Email</span>
-                                            <span class="border"></span>
-                                        </label>
-                                        <label class="custom-input numField">
-                                            <input type="text" required class="number" id="number">
-                                            <span class="placeholder">Phone Number</span>
-                                            <span class="border"></span>
-                                        </label>
-                                    </div>
-                                    <label class="custom-input subjectField">
-                                        <input type="text" required class="subject" id="Subject">
-                                        <span class="placeholder">Subject</span>
-                                        <span class="border"></span>
-                                    </label>
-                                    <label class="custom-input textArea">
-                                        <textarea style="resize: none;" required name="message" id="message" cols="30" rows="10"></textarea>
-                                        <span class="placeholder">How can we Help</span>
-                                        <span class="border"></span>
-                                    </label>
-                                    <button type="submit" class="grow_ellipse quoteBtn">Get Quote</button>
-                                </div>
+                                </form>
                             </div>
                         </div>
                         <div class="mapWr">
