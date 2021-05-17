@@ -1,16 +1,6 @@
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
 
-@font-face {
-    font-family: OpenSans-Regular;
-    src: url('../fonts/OpenSans/OpenSans-Regular.ttf');
-}
-
-@font-face {
-    font-family: OpenSans-Bold;
-    src: url('../fonts/OpenSans/OpenSans-Bold.ttf');
-}
-
 
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
@@ -24,7 +14,7 @@
 body,
 html {
     height: 100%;
-    font-family: OpenSans-Regular, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
@@ -90,39 +80,48 @@ textarea {
     border: none;
 }
 
+textarea:valid,
+input:valid,
 textarea:focus,
 input:focus {
     border-color: transparent !important;
 }
 
+input:valid::-webkit-input-placeholder,
 input:focus::-webkit-input-placeholder {
     color: transparent;
 }
 
+input:valid:-moz-placeholder,
 input:focus:-moz-placeholder {
     color: transparent;
 }
 
-input:focus::-moz-placeholder {
+input:valid::-moz-placeholder input:focus::-moz-placeholder {
     color: transparent;
 }
 
+input:valid:-ms-input-placeholder,
 input:focus:-ms-input-placeholder {
     color: transparent;
 }
 
+textarea:valid::-webkit-input-placeholder,
 textarea:focus::-webkit-input-placeholder {
     color: transparent;
 }
 
+textarea:valid:-moz-placeholder,
 textarea:focus:-moz-placeholder {
     color: transparent;
 }
 
+textarea:valid::-moz-placeholder,
 textarea:focus::-moz-placeholder {
     color: transparent;
 }
 
+textarea:valid:-ms-input-placeholder,
 textarea:focus:-ms-input-placeholder {
     color: transparent;
 }

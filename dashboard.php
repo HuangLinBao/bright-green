@@ -1,10 +1,12 @@
+<?php ob_start(); ?>
+<?php session_start(); ?>
 <?php require_once("./db.php"); ?>
 <?php require_once("./essential.php"); ?>
 
 <?php
 $sql = null;
 $errFlag = null;
-if (isset($_POST['submit'])) {
+
   console_log("hi");
   $first_name = trim($_POST['firstName']);
   $last_name = trim($_POST['lastName']);
@@ -39,70 +41,6 @@ if (isset($_POST['submit'])) {
    $start_date = $today;
    console_log($start_date);
 
- if ($password != $confirm_password) {
-    $errFlag = True;
-}
-if (empty($_POST['gender'])) {
-    $errFlag = True;
-}
-
-if (!isset($errFlag)) {
-    $hash = password_hash($password, PASSWORD_BCRYPT, ['cost' => 10]);
-    if (empty($_POST['role'])) {
-
-        $sql = "INSERT INTO `accounts` (`userID`, `first_name`, `last_name`, `full_name`, `username`, `email`, `user_password`, `phone_number`, `birthday`, `gender`, `role`) VALUES (NULL, :f_name, :l_name, :full_name, :username, :email, :user_password, :phone_number, :birthday, :gender, :role) ";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([
-            ':f_name' => $first_name,
-            ':l_name' => $last_name,
-            ':full_name' => $full_name,
-            ':username' => $username,
-            ':email' => $email,
-            ':user_password' => $hash,
-            ':phone_number' => $phone_Num,
-            ':birthday' => $birthday,
-            ':gender' => $gender,
-            ':role' => "Employee"
-
-
-        ]);
-    } else if (!empty($_POST['role'])) {
-
-        $sql = "INSERT INTO `accounts` (`userID`, `first_name`, `last_name`, `full_name`, `username`, `email`, `user_password`, `phone_number`, `birthday`, `gender`, `role`) VALUES (NULL, :f_name, :l_name, :full_name, :username, :email, :user_password, :phone_number, :birthday, :gender, :role) ";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([
-            ':f_name' => $first_name,
-            ':l_name' => $last_name,
-            ':full_name' => $full_name,
-            ':username' => $username,
-            ':email' => $email,
-            ':user_password' => $hash,
-            ':phone_number' => $phone_Num,
-            ':birthday' => $birthday,
-            ':gender' => $gender,
-            ':role' => $role
-        ]);
-    }
-
-    $sql = "INSERT INTO `employees`(`emp_id`, `emp_full_name`, `position`, `office`, `age`, `start_date`, `salary`, `gender`, `email`, `phone_number`) VALUES (NULL, :emp_full_name, :position, :office, :age, :start_date, :salary, :gender, :email, :phone_number)";
-    $stmt = $pdo->prepare($sql);
-    $stmt -> execute([
-        ':emp_full_name' => $full_name,
-        ':position' => $position,
-        ':office' => $office,
-        ':age' => $age,
-        ':start_date' => $start_date,
-        ':salary' => $salary,
-        ':gender' => $gender,
-        ':email' => $email,
-        ':phone_number' => $phone_Num
-    ]);
-
-    $sql = null;
-}
-
-
-}
 $sql = "SELECT * FROM `employees` ";
 $stmt = $pdo->prepare($sql) ;
     $stmt->execute();
@@ -135,7 +73,7 @@ $stmt = $pdo->prepare($sql) ;
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
     <link rel="stylesheet" href="dashStyle.css">
-    <title>Document</title>
+    <title>Dashboard</title>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -147,6 +85,17 @@ $stmt = $pdo->prepare($sql) ;
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+                <?php
+                if (isset($_SESSION['login'])) {?>
+                   <?php
+                   echo '<li class="nav-item">';
+                   echo '<a class="nav-link">';
+                   echo '<i class="fas fa-user-circle"></i>';
+                   echo "<span class='nav-link-text'> Welcome Back {$_SESSION['full_name']}</span>";
+                   echo '</a>';
+                   echo '</li>';
+                   ?> 
+            <?php } ?>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                     <a class="nav-link" href="dashboard.php">
                         <i class="fa fa-fw fa-dashboard"></i>
@@ -285,7 +234,7 @@ $stmt = $pdo->prepare($sql) ;
                     </form>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal" >
                         <i class="fa fa-fw fa-sign-out"></i>Logout</a>
                 </li>
             </ul>
@@ -729,7 +678,7 @@ $stmt = $pdo->prepare($sql) ;
                     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="login.html">Logout</a>
+                        <a class="btn btn-primary" href="login.php">Logout</a>
                     </div>
                 </div>
             </div>
@@ -749,7 +698,7 @@ $stmt = $pdo->prepare($sql) ;
                                 <div class="card-heading"></div>
                                 <div class="card-body">
                                     <h2 class="title">Registration Info</h2>
-                                    <form action="dashboard.php" method="POST">
+                                    <form action="redirect.php" method="POST">
                                         <?php
                                         if (isset($errFlag)) {
                                             echo "<p>error. invalid_credentials</p>";
