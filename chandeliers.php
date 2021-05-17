@@ -18,6 +18,7 @@
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <link rel="icon" href="topIcon.svg" type="image/x-icon" sizes="128x128">
+    
 
 </head>
 
@@ -700,50 +701,38 @@
                         <div class="cont">
                             <div class="workDiv scrollable">
 
-                                <div class="projectCard">
+                                <div data-toggle="tooltip" title="Al-Raha Tower" data-placement="auto" class="card projectCard">
                                     <img src="https://brightgreenlighting.com/wp-content/uploads/2015/12/Al-Raha-Tower.png" alt="">
-                                    <br>
-                                    <h6>Al-Raha Tower</h6>
+                                
                                 </div>
-                                <div class="projectCard">
+                                <div data-toggle="tooltip" title="Mosque" data-placement="auto" class="card projectCard">
                                     <img src="https://www.propertyfinder.ae/blog/wp-content/uploads/2015/07/al-farooq-mosque-527x350.jpg" alt="">
-                                    <br>
-                                    <h6>Mosque</h6>
+                                   
                                 </div>
-                                <div class="projectCard">
+                                <div data-toggle="tooltip" title="Nesto Hypermarket" data-placement="auto" class="card projectCard">
                                     <img src="https://brightgreenlighting.com/wp-content/uploads/2015/12/Nesto-e1605299129644.png" alt="">
-                                    <br>
-                                    <h6>Nesto Hypermarket</h6>
+                                   
                                 </div>
-                                <div class="projectCard">
+                                <div data-toggle="tooltip" title="Villa-I" data-placement="auto" class="card projectCard">
                                     <img src="https://brightgreenlighting.com/wp-content/uploads/2015/12/villa.png" alt="">
-                                    <br>
-                                    <h6>Villa-I</h6>
+                                
                                 </div>
-                                <div class="projectCard">
+                                <div data-toggle="tooltip" title="Villa-II" data-placement="auto" class="card projectCard">
                                     <img src="https://brightgreenlighting.com/wp-content/uploads/2015/12/villa-2-e1605298992534.png" alt="">
-                                    <br>
-                                    <h6>Villa-II</h6>
                                 </div>
-                                <div class="projectCard">
+                                <div data-toggle="tooltip" title="AL Saraya Tower-Abu Dhabi" data-placement="auto" class="card projectCard">
                                     <img src="https://brightgreenlighting.com/wp-content/uploads/2020/10/3-AL-SARAYA-TOWER-PLOT-C29-R-9-SARAYA-ABU-DHABI.jpg" alt="">
-                                    <br>
-                                    <h6>AL Saraya Tower-Abu Dhabi</h6>
+                                   
                                 </div>
-                                <div class="projectCard">
+                                <div data-toggle="tooltip" title="Kigali Rwanda-Rwanda Africa" data-placement="auto" class="card projectCard">
                                     <img src="https://brightgreenlighting.com/wp-content/uploads/2020/10/1-KIGALI-RWANDA-LOC.-RWANDA-AFRICA.jpg" alt="">
-                                    <br>
-                                    <h6>Kigali Rwanda-Rwanda Africa</h6>
+                                    
                                 </div>
-                                <div class="projectCard">
+                                <div data-toggle="tooltip" title="Turkmanistan–EXPO Pavilion–Dubai" data-placement="auto" class="card projectCard">
                                     <img src="https://brightgreenlighting.com/wp-content/uploads/2020/11/14-TURKMENISTAN-EXPO-PAVILION-DUBAI-UAE.png" alt="">
-                                    <br>
-                                    <h6>Turkmanistan–EXPO Pavilion–Dubai</h6>
                                 </div>
-                                <div class="projectCard">
+                                <div data-toggle="tooltip" title="AHED tower Dubai" data-placement="auto" class="card projectCard">
                                     <img src="https://brightgreenlighting.com/wp-content/uploads/2020/11/AHAD-TOWER-DUBAI.png" alt="">
-                                    <br>
-                                    <h6>Ahad Tower–DUBAI</h6>
                                 </div>
 
                             </div>
@@ -822,7 +811,12 @@
                             <div class="loader main"></div>
                             <div class="loader sub"></div>
                             <main data-barba="container" data-barba-namespace="chandeliers" class="prodChand">
-                                <h1>Our Products</h1>
+                                <h1>Chandliers</h1>
+                                <div class="productsDiv scrollable">
+                                <div data-toggle="tooltip" title="AHED tower Dubai" data-placement="auto"  class="card productCard">
+                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2020/11/AHAD-TOWER-DUBAI.png" alt="">
+                                </div>
+                                </div>
 
                             </main>
 

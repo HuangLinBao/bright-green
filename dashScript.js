@@ -155,4 +155,26 @@ $(document).ready(function() {
         }, 1000, 'easeInOutExpo');
         event.preventDefault();
     });
+
+    $("#type").change(function() {
+        var val = $(this).val();
+        if (val == "product") {
+            $("#category").html("<option value='' class='roleChoice' disabled='disabled' selected='selected'> --Select Category--  </option>" +
+                "<option value='chandeliers'>Chandeliers</option>" +
+                "<option value='down_Light'>Down Light</option>" +
+                "<option value='flood_light'>Flood Light</option>" +
+                "<option value='ground_light'>Ground Light</option>" +
+                "<option value='pendant_light'>Pendant Light</option>" +
+                "<option value='recessed_light'>Recessed Light</option>" +
+                "<option value='wall_recessed_light'>Wall Recessed Light</option>" +
+                "<option value='road_light'>Road Light</option>" +
+                "<option value='solar_light'>Solar Light</option>" +
+                "<option value='spot_light'>Spot Light</option>" +
+                "<option value='strip_light'>Strip Light</option>" +
+                "<option value='track_light'>Track Light</option>" +
+                "<option value='wall_surface_light'>Wall Surface Light</option>"
+            );
+        }
+    });
+
 })(jQuery); // End of use strict

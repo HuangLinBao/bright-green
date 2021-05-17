@@ -715,28 +715,32 @@ body {
     width: 1150px;
     height: 550px;
     border-radius: 35px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    text-align: justify;
     box-shadow: inset 0 0 8px rgba(72, 84, 96, 0.69);
 }
 
-.mainContainer section.main .contentWrap .workPage .Wrapper .cont .workDiv .projectCard {
+div.scrollable {
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+}
+
+.mainContainer section.main .contentWrap .workPage .Wrapper .cont .workDiv .card.projectCard {
     height: 200px;
     width: 300px;
     display: flex;
     flex-direction: column;
-    border: 2px solid #45af0d;
     padding: 10px;
     margin: 20px;
     border-radius: 25px;
     box-shadow: 5px 7px 8px 5px rgba(72, 84, 96, 0.69);
+    justify-content: center;
+    align-items: center;
 }
 
-.mainContainer section.main .contentWrap .workPage .Wrapper .cont .workDiv .projectCard img {
+.mainContainer section.main .contentWrap .workPage .Wrapper .cont .workDiv .card.projectCard img {
     border-radius: 15px;
-    height: 150px;
-    width: 250px;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .mainContainer section.main .contentWrap .workPage .Wrapper .cont .workDiv .projectCard h6 {
@@ -778,6 +782,25 @@ body {
     width: 70%;
     height: 80%;
     position: relative;
+}
+
+.mainContainer section.main .contentWrap .productsPage .wrap .cont main .productCard {
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 25px;
+    box-shadow: 5px 7px 8px 5px rgba(72, 84, 96, 0.69);
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContainer section.main .contentWrap .productsPage .wrap .cont main .productCard img {
+    border-radius: 15px;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .mainContainer section.main .contentWrap .productsPage .wrap .cont main.prodHome {

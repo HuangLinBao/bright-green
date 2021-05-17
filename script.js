@@ -220,4 +220,13 @@ function transitAnimation() {
     });
 
 
+    $('.cont [data-toggle="tooltip"]').tooltip({
+        //template: '<div class="tooltip navbar-sidenav-tooltip" role="tooltip" style="pointer-events: none;"><div class="arrow"></div><div class="tooltip-inner"></div></div>',
+        show: { effect: "blind", duration: 1 }
+    });
+    $('[data-toggle="tooltip"]').tooltip();
+
+
+    $("[data-tooltip]").css({ top: $("#ll").position().top - 30 });
+
 }

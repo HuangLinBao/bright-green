@@ -7,43 +7,43 @@
 $sql = null;
 $errFlag = null;
 
-  console_log("hi");
-  $first_name = trim($_POST['firstName']);
-  $last_name = trim($_POST['lastName']);
-  $full_name = $first_name . " " . $last_name;
-  console_log($first_name);
-  console_log($last_name);
-  console_log($full_name);
-  $username = trim($_POST['username']);
-  $birthday = trim($_POST['birthday']);
-  $age = calculateAge($birthday);
-  $gender = trim($_POST['gender']);
-  console_log($username);
-  console_log($birthday);
-  console_log($age);
-  console_log($gender);  
-   $role = trim($_POST['role']);
-   $email = trim($_POST['email']);
-   $phone_Num = trim($_POST['phone']);
-   $password = trim($_POST['password']);
-   $confirm_password = trim($_POST['confirm_password']);
-   console_log($role);
-   console_log($email);
-   console_log($phone_Num);
-   console_log($password);
-   console_log($confirm_password);
-   $office = trim($_POST['office']);
-   $salary = trim($_POST['salary']) . "AED";
-   $position = trim($_POST['position']);
-   console_log($office);
-   console_log($salary);
-   console_log($position);
-   $start_date = $today;
-   console_log($start_date);
+console_log("hi");
+$first_name = trim($_POST['firstName']);
+$last_name = trim($_POST['lastName']);
+$full_name = $first_name . " " . $last_name;
+console_log($first_name);
+console_log($last_name);
+console_log($full_name);
+$username = trim($_POST['username']);
+$birthday = trim($_POST['birthday']);
+$age = calculateAge($birthday);
+$gender = trim($_POST['gender']);
+console_log($username);
+console_log($birthday);
+console_log($age);
+console_log($gender);
+$role = trim($_POST['role']);
+$email = trim($_POST['email']);
+$phone_Num = trim($_POST['phone']);
+$password = trim($_POST['password']);
+$confirm_password = trim($_POST['confirm_password']);
+console_log($role);
+console_log($email);
+console_log($phone_Num);
+console_log($password);
+console_log($confirm_password);
+$office = trim($_POST['office']);
+$salary = trim($_POST['salary']) . "AED";
+$position = trim($_POST['position']);
+console_log($office);
+console_log($salary);
+console_log($position);
+$start_date = $today;
+console_log($start_date);
 
 $sql = "SELECT * FROM `employees` ";
-$stmt = $pdo->prepare($sql) ;
-    $stmt->execute();
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
 
 ?>
 
@@ -70,7 +70,7 @@ $stmt = $pdo->prepare($sql) ;
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha512-rRQtF4V2wtAvXsou4iUAs2kXHi3Lj9NE7xJR77DE7GHsxgY9RTWy93dzMXgDIG8ToiRTD45VsDNdTiUagOFeZA==" crossorigin="anonymous" />
-
+    <link rel="stylesheet" href="upload.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
     <link rel="stylesheet" href="dashStyle.css">
     <title>Dashboard</title>
@@ -86,16 +86,16 @@ $stmt = $pdo->prepare($sql) ;
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
                 <?php
-                if (isset($_SESSION['login'])) {?>
-                   <?php
-                   echo '<li class="nav-item">';
-                   echo '<a class="nav-link">';
-                   echo '<i class="fas fa-user-circle"></i>';
-                   echo "<span class='nav-link-text'> Welcome Back {$_SESSION['full_name']}</span>";
-                   echo '</a>';
-                   echo '</li>';
-                   ?> 
-            <?php } ?>
+                if (isset($_SESSION['login'])) { ?>
+                    <?php
+                    echo '<li class="nav-item">';
+                    echo '<a class="nav-link">';
+                    echo '<i class="fas fa-user-circle"></i>';
+                    echo "<span class='nav-link-text'> Welcome Back {$_SESSION['full_name']}</span>";
+                    echo '</a>';
+                    echo '</li>';
+                    ?>
+                <?php } ?>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                     <a class="nav-link" href="dashboard.php">
                         <i class="fa fa-fw fa-dashboard"></i>
@@ -125,7 +125,7 @@ $stmt = $pdo->prepare($sql) ;
                             <a href="navbar.html">Edit cards</a>
                         </li>
                         <li>
-                            <a href="cards.html">Add a new card</a>
+                            <a style="cursor:pointer;" data-toggle="modal" data-target="#uploadModal">Add a new card</a>
                         </li>
                     </ul>
                 </li>
@@ -234,7 +234,7 @@ $stmt = $pdo->prepare($sql) ;
                     </form>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal" >
+                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
                         <i class="fa fa-fw fa-sign-out"></i>Logout</a>
                 </li>
             </ul>
@@ -629,19 +629,19 @@ $stmt = $pdo->prepare($sql) ;
                             </tfoot>
                             <tbody>
                                 <?php
-                                while($post = $stmt->fetch(PDO::FETCH_ASSOC)){
+                                while ($post = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                 ?>
-                                <tr>
-                                <td><?php echo $post['emp_full_name'];?></td>
-                                <td><?php echo $post['position'];?></td>
-                                <td><?php echo $post['office'];?></td>
-                                <td><?php echo $post['age'];?></td>
-                                <td><?php echo $post['start_date'];?></td>
-                                <td><?php echo $post['salary'];?></td>
-                                <td><?php echo $post['gender'];?></td>
-                                <td><?php echo $post['email'];?></td>
-                                <td><?php echo $post['phone_number'];?></td>
-                                </tr>
+                                    <tr>
+                                        <td><?php echo $post['emp_full_name']; ?></td>
+                                        <td><?php echo $post['position']; ?></td>
+                                        <td><?php echo $post['office']; ?></td>
+                                        <td><?php echo $post['age']; ?></td>
+                                        <td><?php echo $post['start_date']; ?></td>
+                                        <td><?php echo $post['salary']; ?></td>
+                                        <td><?php echo $post['gender']; ?></td>
+                                        <td><?php echo $post['email']; ?></td>
+                                        <td><?php echo $post['phone_number']; ?></td>
+                                    </tr>
                                 <?php
                                 }
                                 ?>
@@ -771,7 +771,66 @@ $stmt = $pdo->prepare($sql) ;
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <form action="addPic.php" , method="POST">
 
+                        <div class="modal-header">
+                            <h5 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="modal-title" id="exampleModalLongTitle">Add A Card</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="file-upload">
+                                <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+
+                                <div class="image-upload-wrap">
+                                    <input name="img" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                                    <div class="drag-text">
+                                        <h3>Drag and drop a file or select add Image</h3>
+                                    </div>
+                                </div>
+                                <div class="file-upload-content">
+                                    <img class="file-upload-image" src="#" alt="your image" />
+                                    <div class="image-title-wrap">
+                                        <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <input class="input--style-3" type="text" placeholder="Name" name="name">
+                            </div>
+                            <div class="input-group">
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select id="type" name="type">
+                                        <option value="" class="roleChoice" disabled="disabled" selected="selected">type</option>
+                                        <option value="product">Product</option>
+                                        <option value="project">Project</option>
+
+                                    </select>
+                                    <div class="select-dropdown"></div>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                    <select id="category" name="category">
+                                        <option value="" class="roleChoice" disabled="disabled" selected="selected"> --Category-- </option>
+                                    </select>
+                                    <div class="select-dropdown"></div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" name="submit">Save changes</button>
+                            </div>
+                    </form>
+                </div>
+                </form>
+            </div>
+        </div>
 
 
 </body>
@@ -794,14 +853,45 @@ $stmt = $pdo->prepare($sql) ;
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
     });
 
-    
 
 
 
- var cleave = new Cleave('#slaray', {
-     numeral: true,
-     numeralThousandsGroupStyle: 'thousand'
- });
 
+    var cleave = new Cleave('#slaray', {
+        numeral: true,
+        numeralThousandsGroupStyle: 'thousand'
+    });
 
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('.image-upload-wrap').hide();
+
+                $('.file-upload-image').attr('src', e.target.result);
+                $('.file-upload-content').show();
+
+                $('.image-title').html(input.files[0].name);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+
+        } else {
+            removeUpload();
+        }
+    }
+
+    function removeUpload() {
+        $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+        $('.file-upload-content').hide();
+        $('.image-upload-wrap').show();
+    }
+    $('.image-upload-wrap').bind('dragover', function() {
+        $('.image-upload-wrap').addClass('image-dropping');
+    });
+    $('.image-upload-wrap').bind('dragleave', function() {
+        $('.image-upload-wrap').removeClass('image-dropping');
+    });
 </script>
