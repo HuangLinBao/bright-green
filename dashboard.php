@@ -4,46 +4,16 @@
 <?php require_once("./essential.php"); ?>
 
 <?php
-$sql = null;
-$errFlag = null;
 
-console_log("hi");
-$first_name = trim($_POST['firstName']);
-$last_name = trim($_POST['lastName']);
-$full_name = $first_name . " " . $last_name;
-console_log($first_name);
-console_log($last_name);
-console_log($full_name);
-$username = trim($_POST['username']);
-$birthday = trim($_POST['birthday']);
-$age = calculateAge($birthday);
-$gender = trim($_POST['gender']);
-console_log($username);
-console_log($birthday);
-console_log($age);
-console_log($gender);
-$role = trim($_POST['role']);
-$email = trim($_POST['email']);
-$phone_Num = trim($_POST['phone']);
-$password = trim($_POST['password']);
-$confirm_password = trim($_POST['confirm_password']);
-console_log($role);
-console_log($email);
-console_log($phone_Num);
-console_log($password);
-console_log($confirm_password);
-$office = trim($_POST['office']);
-$salary = trim($_POST['salary']) . "AED";
-$position = trim($_POST['position']);
-console_log($office);
-console_log($salary);
-console_log($position);
-$start_date = $today;
-console_log($start_date);
 
 $sql = "SELECT * FROM `employees` ";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
+
+$msgsql = "SELECT * FROM `messages` WHERE `state`= :state ";
+$msgstmt = $pdo->prepare($msgsql);
+$msgstmt->execute([':state' =>0]);
+$count = $msgstmt -> rowCount();
 
 ?>
 
@@ -109,10 +79,10 @@ $stmt->execute();
                     </a>
 
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Stats">
-                    <a class="nav-link" href="tables.html">
-                        <i class="fas fa-chart-line"></i>
-                        <span class="nav-link-text">Stats</span>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Messages">
+                    <a class="nav-link" href="messages.php">
+                        <i class="fas fa-envelope"></i>
+                        <span class="nav-link-text">Messages</span>
                     </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
@@ -157,24 +127,21 @@ $stmt->execute();
                     <div class="dropdown-menu" aria-labelledby="messagesDropdown">
                         <h6 class="dropdown-header">New Messages:</h6>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
-                            <strong>David Miller</strong>
-                            <span class="small float-right text-muted">11:21 AM</span>
-                            <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
-                            <strong>Jane Smith</strong>
-                            <span class="small float-right text-muted">11:21 AM</span>
-                            <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead of 4:00. Thanks!</div>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
-                            <strong>John Doe</strong>
-                            <span class="small float-right text-muted">11:21 AM</span>
-                            <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to sign off of them let me know and we can discuss distribution.</div>
-                        </a>
-                        <div class="dropdown-divider"></div>
+                        <?php 
+                            while ($msgs = $msgstmt-> fetch(PDO::FETCH_ASSOC)) {
+                                $ms_detail = $msgs['msg'];
+                                $ms_name = $msgs['sender_name'];
+                                $ms_email = $msgs['email'];
+                                $ms_time = $msgs['date_sent'];?>
+                                <a class="dropdown-item" >
+                                <strong><?php echo $ms_name; ?></strong>
+                                <span class="small float-right text-muted"><?php echo $ms_time; ?></span>
+                                <div class="dropdown-message small"><?php echo $ms_detail; ?> </div>
+                                </a>
+                                <div class="dropdown-divider"></div>
+
+                            <?php } ?>
+                        
                         <a class="dropdown-item small" href="#">View all messages</a>
                     </div>
                 </li>
@@ -257,7 +224,7 @@ $stmt->execute();
                             <div class="card-body-icon">
                                 <i class="fa fa-fw fa-comments"></i>
                             </div>
-                            <div class="mr-5">26 New Messages!</div>
+                            <div class="mr-5"> <?php echo $count; ?> New Messages!</div>
                         </div>
                         <a class="card-footer text-white clearfix small z-1" href="#">
                             <span class="float-left">View Details</span>

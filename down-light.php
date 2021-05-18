@@ -1,3 +1,14 @@
+<?php ob_start(); ?>
+<?php session_start(); ?>
+<?php require_once("./db.php"); ?>
+<?php require_once("./essential.php"); ?>
+
+<?php
+$sql = "SELECT * FROM `projects_List`";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -700,52 +711,20 @@
                         <div class="cont">
                             <div class="workDiv scrollable">
 
-                                <div class="projectCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2015/12/Al-Raha-Tower.png" alt="">
-                                    <br>
-                                    <h6>Al-Raha Tower</h6>
-                                </div>
-                                <div class="projectCard">
-                                    <img src="https://www.propertyfinder.ae/blog/wp-content/uploads/2015/07/al-farooq-mosque-527x350.jpg" alt="">
-                                    <br>
-                                    <h6>Mosque</h6>
-                                </div>
-                                <div class="projectCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2015/12/Nesto-e1605299129644.png" alt="">
-                                    <br>
-                                    <h6>Nesto Hypermarket</h6>
-                                </div>
-                                <div class="projectCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2015/12/villa.png" alt="">
-                                    <br>
-                                    <h6>Villa-I</h6>
-                                </div>
-                                <div class="projectCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2015/12/villa-2-e1605298992534.png" alt="">
-                                    <br>
-                                    <h6>Villa-II</h6>
-                                </div>
-                                <div class="projectCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2020/10/3-AL-SARAYA-TOWER-PLOT-C29-R-9-SARAYA-ABU-DHABI.jpg" alt="">
-                                    <br>
-                                    <h6>AL Saraya Tower-Abu Dhabi</h6>
-                                </div>
-                                <div class="projectCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2020/10/1-KIGALI-RWANDA-LOC.-RWANDA-AFRICA.jpg" alt="">
-                                    <br>
-                                    <h6>Kigali Rwanda-Rwanda Africa</h6>
-                                </div>
-                                <div class="projectCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2020/11/14-TURKMENISTAN-EXPO-PAVILION-DUBAI-UAE.png" alt="">
-                                    <br>
-                                    <h6>Turkmanistan–EXPO Pavilion–Dubai</h6>
-                                </div>
-                                <div class="projectCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2020/11/AHAD-TOWER-DUBAI.png" alt="">
-                                    <br>
-                                    <h6>Ahad Tower–DUBAI</h6>
-                                </div>
+                            <?php
+                                while ($post = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                    echo
+                                    '<div data-toggle="tooltip" title="' . $post['project_name'] . '" data-placement="auto" class="card projectCard">
 
+                                        <img src="' . $post['project_img'] . '" /> 
+
+                                        </div>
+
+                                    
+                                    ';
+                                }
+
+                                ?>
                             </div>
                         </div>
                         <div style="margin-top: 300px; padding: 20px; width: 100%; display: flex; justify-content: center;">
@@ -821,8 +800,29 @@
                         <div class="cont">
                             <div class="loader main"></div>
                             <div class="loader sub"></div>
-                            <main data-barba="container" data-barba-namespace="downlight" class="prodDown">
-                                <h1>Our Products</h1>
+                            <main data-barba="container" data-barba-namespace="downlight" class="prod prodDown">
+                            <div class="productsDiv scrollable">
+                                <?php
+                                $sql = "SELECT * FROM `products_list` WHERE `category` = :category";
+                                $stmt = $pdo -> prepare($sql);
+                                $stmt -> execute([
+                                    ':category' => "down_Light"
+                                ]);
+                                while ($post = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                    echo
+                                    '<div data-toggle="tooltip" title="' . $post['product_name'] . '" data-placement="auto" class="card productCard">
+
+                                        <img src="' . $post['product_img'] . '" /> 
+
+                                        </div>
+
+                                    
+                                    ';
+                                }
+
+                                ?>
+                                </div>
+
 
                             </main>
                         </div>

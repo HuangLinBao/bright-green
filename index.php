@@ -802,8 +802,11 @@ $stmt->execute();
                             <div class="loader main"></div>
                             <div class="loader sub"></div>
                             <!-- <div class="loader sub"></div> -->
-                            <main data-barba="container" data-barba-namespace="home" class="prodHome">
+                            <main data-barba="container" data-barba-namespace="home" class="prod prodHome">
+                                
                                 <h1>Our Products</h1>
+                                
+
                         </div>
 
                         </main>

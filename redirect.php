@@ -3,6 +3,49 @@
 <?php require_once("./essential.php"); ?>
 <?php require_once("./dashboard.php"); ?>
 
+
+<?php 
+$sql = null;
+$errFlag = null;
+
+console_log("hi");
+$first_name = trim($_POST['firstName']);
+$last_name = trim($_POST['lastName']);
+$full_name = $first_name . " " . $last_name;
+console_log($first_name);
+console_log($last_name);
+console_log($full_name);
+$username = trim($_POST['username']);
+$birthday = trim($_POST['birthday']);
+$age = calculateAge($birthday);
+$gender = trim($_POST['gender']);
+console_log($username);
+console_log($birthday);
+console_log($age);
+console_log($gender);
+$role = trim($_POST['role']);
+$email = trim($_POST['email']);
+$phone_Num = trim($_POST['phone']);
+$password = trim($_POST['password']);
+$confirm_password = trim($_POST['confirm_password']);
+console_log($role);
+console_log($email);
+console_log($phone_Num);
+console_log($password);
+console_log($confirm_password);
+$office = trim($_POST['office']);
+$salary = trim($_POST['salary']) . "AED";
+$position = trim($_POST['position']);
+console_log($office);
+console_log($salary);
+console_log($position);
+$start_date = $today;
+console_log($start_date);
+
+
+?>
+
+
 <?php
 $sql = null;
 if (isset($_POST['submit'])) {

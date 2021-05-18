@@ -1,3 +1,15 @@
+<?php ob_start(); ?>
+<?php session_start(); ?>
+<?php require_once("./db.php"); ?>
+<?php require_once("./essential.php"); ?>
+
+<?php
+$sql = "SELECT * FROM `projects_List`";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -701,39 +713,21 @@
                         <div class="cont">
                             <div class="workDiv scrollable">
 
-                                <div data-toggle="tooltip" title="Al-Raha Tower" data-placement="auto" class="card projectCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2015/12/Al-Raha-Tower.png" alt="">
-                                
-                                </div>
-                                <div data-toggle="tooltip" title="Mosque" data-placement="auto" class="card projectCard">
-                                    <img src="https://www.propertyfinder.ae/blog/wp-content/uploads/2015/07/al-farooq-mosque-527x350.jpg" alt="">
-                                   
-                                </div>
-                                <div data-toggle="tooltip" title="Nesto Hypermarket" data-placement="auto" class="card projectCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2015/12/Nesto-e1605299129644.png" alt="">
-                                   
-                                </div>
-                                <div data-toggle="tooltip" title="Villa-I" data-placement="auto" class="card projectCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2015/12/villa.png" alt="">
-                                
-                                </div>
-                                <div data-toggle="tooltip" title="Villa-II" data-placement="auto" class="card projectCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2015/12/villa-2-e1605298992534.png" alt="">
-                                </div>
-                                <div data-toggle="tooltip" title="AL Saraya Tower-Abu Dhabi" data-placement="auto" class="card projectCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2020/10/3-AL-SARAYA-TOWER-PLOT-C29-R-9-SARAYA-ABU-DHABI.jpg" alt="">
-                                   
-                                </div>
-                                <div data-toggle="tooltip" title="Kigali Rwanda-Rwanda Africa" data-placement="auto" class="card projectCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2020/10/1-KIGALI-RWANDA-LOC.-RWANDA-AFRICA.jpg" alt="">
+                            <?php
+                                while ($post = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                    echo
+                                    '<div data-toggle="tooltip" title="' . $post['project_name'] . '" data-placement="auto" class="card projectCard">
+
+                                        <img src="' . $post['project_img'] . '" /> 
+
+                                        </div>
+
                                     
-                                </div>
-                                <div data-toggle="tooltip" title="Turkmanistan–EXPO Pavilion–Dubai" data-placement="auto" class="card projectCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2020/11/14-TURKMENISTAN-EXPO-PAVILION-DUBAI-UAE.png" alt="">
-                                </div>
-                                <div data-toggle="tooltip" title="AHED tower Dubai" data-placement="auto" class="card projectCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2020/11/AHAD-TOWER-DUBAI.png" alt="">
-                                </div>
+                                    ';
+                                }
+
+                                ?>
+
 
                             </div>
                         </div>
@@ -810,12 +804,27 @@
                         <div class="cont">
                             <div class="loader main"></div>
                             <div class="loader sub"></div>
-                            <main data-barba="container" data-barba-namespace="chandeliers" class="prodChand">
-                                <h1>Chandliers</h1>
+                            <main data-barba="container" data-barba-namespace="chandeliers" class="prod prodChand">
                                 <div class="productsDiv scrollable">
-                                <div data-toggle="tooltip" title="AHED tower Dubai" data-placement="auto"  class="card productCard">
-                                    <img src="https://brightgreenlighting.com/wp-content/uploads/2020/11/AHAD-TOWER-DUBAI.png" alt="">
-                                </div>
+                                <?php
+                                $sql = "SELECT * FROM `products_list` WHERE `category` = :category";
+                                $stmt = $pdo -> prepare($sql);
+                                $stmt -> execute([
+                                    ':category' => "chandeliers"
+                                ]);
+                                while ($post = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                    echo
+                                    '<div data-toggle="tooltip" title="' . $post['product_name'] . '" data-placement="auto" class="card productCard">
+
+                                        <img src="' . $post['product_img'] . '" /> 
+
+                                        </div>
+
+                                    
+                                    ';
+                                }
+
+                                ?>
                                 </div>
 
                             </main>
