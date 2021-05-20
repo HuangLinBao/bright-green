@@ -509,6 +509,14 @@ body {
     transition: all 0.35s;
 }
 
+.mainContainer section.main .contentWrap .servicePage .textContainer .servicesCard .btnsCard button[class^="slide"].selected::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 0.35s;
+}
+
 .mainContainer section.main .contentWrap .servicePage .textContainer .servicesCard .btnsCard button.selected::after {
     transition: all 0.35s;
 }
@@ -518,7 +526,7 @@ body {
     right: 0;
     top: 0;
     bottom: 0;
-    transition: all 0.35s;
+    transition: all 0.35s ease-in-out;
 }
 
 .mainContainer section.main .contentWrap .servicePage .textContainer .servicesCard .btnsCard button.slide_from_left::after {
@@ -847,7 +855,7 @@ div.scrollable {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: #2ed573;
+    background-color: #217c06;
     z-index: 999;
     transform: scaleX(0);
     border-radius: 35px;
